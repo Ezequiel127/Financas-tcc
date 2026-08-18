@@ -1,0 +1,41 @@
+# ==================================================
+# Financas TCC - Root .gitignore
+# ==================================================
+
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+
+# Local application configuration
+application-local.properties
+application-*.local.properties
+
+# IDEs / editors
+.vscode/
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Operating system
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs / temporary files
+*.log
+*.tmp
+*.swp
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+coverage/
+
+# Java / Maven
+target/
+
+# Vercel
+.vercel/
