@@ -1,6 +1,7 @@
 package com.financastcc.backend.identity.presentation;
 
 import com.financastcc.backend.identity.application.exception.EmailAlreadyExistsException;
+import com.financastcc.backend.identity.application.exception.InvalidCredentialsException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -36,6 +37,16 @@ public class RegistrationExceptionHandler {
                 exception.getMessage()
         );
         problem.setTitle("Conflito de e-mail");
+        return problem;
+    }
+
+    @ExceptionHandler(InvalidCredentialsException.class)
+    ProblemDetail handleInvalidCredentials(InvalidCredentialsException exception) {
+        ProblemDetail problem = ProblemDetail.forStatusAndDetail(
+                HttpStatus.UNAUTHORIZED,
+                exception.getMessage()
+        );
+        problem.setTitle("Não autorizado");
         return problem;
     }
 }
