@@ -20,19 +20,36 @@ Um dos conceitos centrais do projeto é o **“Quanto posso gastar agora?”**, 
 
 ## Status
 
-🚧 **Em desenvolvimento**
+🚧 **Em desenvolvimento — implementação do MVP em andamento**
 
-A base técnica inicial do projeto já foi configurada:
+A fundação técnica do projeto está configurada e a implementação das funcionalidades já foi iniciada.
 
-* frontend com Next.js, React, TypeScript e Tailwind CSS;
-* backend com Java 21 e Spring Boot;
-* PostgreSQL como banco de dados;
-* Flyway para migrations;
-* estrutura de monorepo;
-* configuração inicial de ambiente de desenvolvimento;
-* Git e GitHub configurados.
+### Implementado até o momento
 
-As funcionalidades do produto ainda estão em fase de implementação.
+- monorepo com frontend e backend separados;
+- frontend com Next.js, React, TypeScript e Tailwind CSS;
+- backend com Java 21 e Spring Boot;
+- PostgreSQL e migrations com Flyway;
+- estrutura inicial do domínio `Identity`;
+- cadastro de usuários;
+- autenticação com Spring Security;
+- gerenciamento de sessão;
+- proteção CSRF;
+- endpoint para consulta do usuário autenticado.
+- testes automatizados do fluxo de cadastro e autenticação;
+
+Os demais módulos financeiros do MVP serão implementados incrementalmente conforme o roadmap.
+
+## API implementada
+
+O módulo de identidade já disponibiliza os seguintes endpoints:
+
+| Método | Endpoint | Finalidade |
+| --- | --- | --- |
+| POST | `/api/v1/auth/register` | Cadastro de usuário |
+| POST | `/api/v1/auth/login` | Autenticação e criação de sessão |
+| GET | `/api/v1/auth/csrf` | Obtenção do token CSRF |
+| GET | `/api/v1/auth/me` | Consulta do usuário autenticado |
 
 ## MVP
 
