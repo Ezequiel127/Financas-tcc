@@ -30,6 +30,9 @@ public class SecurityConfiguration {
 
     private static final String REGISTRATION_ENDPOINT = "/api/v1/auth/register";
     private static final String LOGIN_ENDPOINT = "/api/v1/auth/login";
+    private static final String PASSWORD_RECOVERY_ENDPOINT =
+            "/api/v1/auth/password-recovery";
+    private static final String PASSWORD_RESET_ENDPOINT = "/api/v1/auth/password-reset";
     private static final String CSRF_ENDPOINT = "/api/v1/auth/csrf";
     private static final String LOGOUT_ENDPOINT = "/api/v1/auth/logout";
 
@@ -87,7 +90,9 @@ public class SecurityConfiguration {
                         .requestMatchers(
                                 HttpMethod.POST,
                                 REGISTRATION_ENDPOINT,
-                                LOGIN_ENDPOINT
+                                LOGIN_ENDPOINT,
+                                PASSWORD_RECOVERY_ENDPOINT,
+                                PASSWORD_RESET_ENDPOINT
                         ).permitAll()
                         .requestMatchers(HttpMethod.GET, CSRF_ENDPOINT).permitAll()
                         .anyRequest().authenticated()

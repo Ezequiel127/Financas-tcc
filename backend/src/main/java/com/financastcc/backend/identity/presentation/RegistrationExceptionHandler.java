@@ -2,6 +2,7 @@ package com.financastcc.backend.identity.presentation;
 
 import com.financastcc.backend.identity.application.exception.EmailAlreadyExistsException;
 import com.financastcc.backend.identity.application.exception.InvalidCredentialsException;
+import com.financastcc.backend.identity.application.exception.InvalidPasswordResetTokenException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-@RestControllerAdvice(assignableTypes = AuthController.class)
+@RestControllerAdvice(assignableTypes = {AuthController.class, PasswordRecoveryController.class})
 public class RegistrationExceptionHandler {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -47,6 +48,18 @@ public class RegistrationExceptionHandler {
                 exception.getMessage()
         );
         problem.setTitle("Não autorizado");
+        return problem;
+    }
+
+    @ExceptionHandler(InvalidPasswordResetTokenException.class)
+    ProblemDetail handleInvalidPasswordResetToken(
+            InvalidPasswordResetTokenException exception
+    ) {
+        ProblemDetail problem = ProblemDetail.forStatusAndDetail(
+                HttpStatus.BAD_REQUEST,
+                exception.getMessage()
+        );
+        problem.setTitle("Token de recuperação inválido");
         return problem;
     }
 }
