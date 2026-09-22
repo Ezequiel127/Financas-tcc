@@ -1,0 +1,27 @@
+FINANÇAS TCC — FONTES VIGENTES
+
+Este pacote contém as versões vigentes disponíveis das fontes técnicas do projeto.
+
+Fonte funcional oficial não incluída por solicitação do usuário:
+- Finanças TCC — Documento de Requisitos v1.2.pdf
+
+O usuário adicionará esse PDF separadamente ao novo Projeto do ChatGPT. Ele prevalece sobre versões anteriores dos requisitos.
+
+Ordem de precedência:
+1. Documento de Requisitos v1.2, adicionado separadamente.
+2. 01_Arquitetura_Tecnica_v1.0_Revisao_Editorial.md.
+3. 02_Modelo_Banco_Dados_v1.1_Consolidado.md.
+4. 03_UX_UI_Fase1_v1.0_Revisao_Editorial_Atualizado.md.
+5. 04_UX_UI_Fase2_Decisoes_Globais_v1.0.md.
+6. 05_Referencias_Visuais_e_Profissionais_v1.0.md.
+7. migrations/ com as migrations vigentes V1–V8 e V3.1.
+8. Evidência operacional atual do repositório Ezequiel127/Financas-tcc.
+
+Estado técnico conhecido, ainda sujeito a nova validação no repositório:
+- Monorepo com frontend, backend e documentação.
+- Backend Java/Spring Boot e frontend Next.js/React/TypeScript.
+- PostgreSQL e Flyway.
+- A última entrega relatada foi a recuperação e redefinição de senha do RF-044, validada à época com 54 testes.
+- O commit, o HEAD atual, os serviços e os testes ainda devem ser revalidados antes de continuar o desenvolvimento.
+
+Não trate relatos históricos como estado operacional atual sem executar as verificações correspondentes.
